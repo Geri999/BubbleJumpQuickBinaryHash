@@ -12,18 +12,18 @@ public class LoadService {
 
     public static String[] loadDirectoryDataArray() throws IOException {
         String directoryDataString =
-                new String(Files.readAllBytes(Paths.get("G:\\directory.txt"))).replaceAll("(\\d+ )", "");
+                new String(Files.readAllBytes(Paths.get("directory.txt"))).replaceAll("(\\d+ )", "");
         return directoryDataString.split("\r\n");
     }
 
     public static String[] loadFindDataArray() throws IOException {
-        String findDataString = new String(Files.readAllBytes(Paths.get("G:\\find.txt")));
+        String findDataString = new String(Files.readAllBytes(Paths.get("find.txt")));
         return findDataString.split("\r\n");
     }
 
     public static void loadDirectoryDataArrayHashMap(PBDataBase pbDataBase) throws IOException {
         String[] directoryDataString =
-                new String(Files.readAllBytes(Paths.get("G:\\directory.txt"))).split("\r\n");
+                new String(Files.readAllBytes(Paths.get("directory.txt"))).split("\r\n");
 
         Pattern pattern = Pattern.compile("(\\d*) (.*)", Pattern.MULTILINE);
         Matcher matcher;
@@ -38,7 +38,7 @@ public class LoadService {
 
     public static void loadDirectoryDataArrayHashMap2(PBDataBase pbDataBase) throws IOException {
         String[] directoryDataString =
-                new String(Files.readAllBytes(Paths.get("G:\\directory.txt"))).split("\r\n");
+                new String(Files.readAllBytes(Paths.get("directory.txt"))).split("\r\n");
 
         for (String s : directoryDataString) {
             pbDataBase.put(new PhoneBookRecord(s.substring(s.indexOf(' ')+1), s.substring(0,s.indexOf(' '))));
