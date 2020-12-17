@@ -1,3 +1,4 @@
 test linia 1
 test linijka 2
 test linijka 3
+linijka 4
